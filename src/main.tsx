@@ -2,18 +2,18 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
-import  Homepage from './pages/Homepage';
-import Register from './pages/Register';
+import { HomePage } from './pages/HomePage';
+import App from './App';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Homepage />,
+    element: <App />,
   },
   {
-    path: "/register",
-    element: <Register />,
+    path: "/home",
+    element: <HomePage />,
   },
 ]);
 

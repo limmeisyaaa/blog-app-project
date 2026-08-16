@@ -1,0 +1,99 @@
+/* Mengimpor seluruh utilitas dan core Tailwind CSS v4 */
+@import "tailwindcss";
+
+/* Mendefinisikan tema kustom */
+@theme {
+  /* Kamu bisa mengganti kode warna hex di bawah sesuai dengan keinginanmu */
+  --color-offwhite: #FAFAF7; 
+  --color-ink: #111827;      /* <-- TAMBAHKAN INI (Contoh: abu-abu sangat gelap/hitam) */
+  --color-electric: #2563EB; /* <-- TAMBAHKAN INI (Contoh: biru elektrik) */
+
+  /* --- TAMBAHKAN INI UNTUK LENCANA NEW DROP --- */
+  /* Warna peach pucat untuk latar belakang ikon */
+  --color-icon-bg-orange: #FCEFE4; 
+  /* Warna oranye cerah untuk tanda seru */
+  --color-icon-exclamation-orange: #FF8A00;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-offwhite text-ink font-sans antialiased;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .container-page {
+    @apply mx-auto max-w-7xl px-5 sm:px-8 lg:px-12;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #FAFAF7;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4d4d4;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a3a3a3;
+}
+
+/* Focus visible */
+*:focus-visible {
+  outline: 2px solid #2563EB;
+  outline-offset: 2px;
+}
+
+/* Prose for blog content */
+.prose-content h2 {
+  @apply text-2xl font-bold mt-8 mb-4 text-ink;
+}
+.prose-content h3 {
+  @apply text-xl font-bold mt-6 mb-3 text-ink;
+}
+.prose-content p {
+  @apply text-base leading-relaxed text-neutral-700 mb-4;
+}
+.prose-content ul {
+  @apply list-disc pl-6 mb-4 space-y-2 text-neutral-700;
+}
+.prose-content ol {
+  @apply list-decimal pl-6 mb-4 space-y-2 text-neutral-700;
+}
+.prose-content blockquote {
+  @apply border-l-4 border-electric pl-4 italic text-neutral-600 my-6;
+}
+.prose-content a {
+  @apply text-electric underline hover:text-orange-500 transition-colors; /* Perbaikan minor: hover:text-orange butuh shade di Tailwind v4, contoh orange-500 */
+}
+.prose-content img {
+  @apply rounded-xl my-6 w-full;
+}
+
+/* Contoh penggunaan jika kamu memiliki class kustom sebelumnya: */
+@layer components {
+  .my-custom-container {
+    @apply bg-offwhite text-gray-800 p-4 rounded-lg shadow-md;
+  }
+}
+
+/* CSS dasar tambahan (opsional) */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
