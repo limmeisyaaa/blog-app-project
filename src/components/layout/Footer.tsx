@@ -13,6 +13,11 @@ export function Footer() {
     if (email) setSubscribed(true);
   };
 
+  // Fungsi pembantu untuk scroll ke atas
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  };
+
   return (
     <footer className="bg-ink text-offwhite">
       <div className="container-page py-16 lg:py-20">
@@ -55,9 +60,13 @@ export function Footer() {
         {/* Links */}
         <div className="grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-5">
           <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center gap-2 text-xl font-extrabold tracking-tight">
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-offwhite text-ink">
-                <span className="text-sm font-black">F</span>
+            <Link 
+              to="/" 
+              onClick={scrollToTop}
+              className="flex items-center gap-2 text-xl font-extrabold tracking-tight"
+            >
+              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-black text-white">
+                <span className="text-sm font-white">F</span>
               </span>
               {company.name}
             </Link>
@@ -82,7 +91,11 @@ export function Footer() {
             <ul className="mt-4 space-y-3">
               {navLinks.map((link) => (
                 <li key={link.path}>
-                  <Link to={link.path} className="text-sm text-neutral-400 transition-colors hover:text-electric">
+                  <Link 
+                    to={link.path} 
+                    onClick={scrollToTop}
+                    className="text-sm text-neutral-400 transition-colors hover:text-electric"
+                  >
                     {link.label}
                   </Link>
                 </li>
@@ -95,7 +108,11 @@ export function Footer() {
             <ul className="mt-4 space-y-3">
               {services.slice(0, 5).map((s) => (
                 <li key={s.name}>
-                  <Link to="/services" className="text-sm text-neutral-400 transition-colors hover:text-electric">
+                  <Link 
+                    to="/services" 
+                    onClick={scrollToTop}
+                    className="text-sm text-neutral-400 transition-colors hover:text-electric"
+                  >
                     {s.name}
                   </Link>
                 </li>
@@ -108,7 +125,7 @@ export function Footer() {
             <ul className="mt-4 space-y-3">
               <li className="flex items-start gap-2 text-sm text-neutral-400">
                 <Mail className="mt-0.5 h-4 w-4 shrink-0 text-electric" />
-                hello@figureform.co
+                hello@figurehome.co
               </li>
               <li className="flex items-start gap-2 text-sm text-neutral-400">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-electric" />

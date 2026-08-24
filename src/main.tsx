@@ -2,19 +2,19 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
-import { HomePage } from './pages/HomePage';
 import App from './App';
+import { LoginPage } from './pages/LoginPage';
 
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <App />,
+    path: "/login",
+    element: <LoginPage />,
   },
   {
-    path: "/home",
-    element: <HomePage />,
-  },
+    path: "*",
+    element: <App />,
+  }
 ]);
 
 createRoot(document.getElementById('root')!).render(

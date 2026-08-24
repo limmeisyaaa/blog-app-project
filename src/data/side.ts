@@ -2,7 +2,7 @@ export const company = {
   name: 'FigureHome',
   tagline: 'Collect Characters. Build Your World.',
   description:
-    'Figureform is a premium action figure and collectible company dedicated to bringing beloved characters to life. We curate, distribute, and craft figures for collectors who care about detail.',
+    'FigureHome is a premium action figure and collectible company dedicated to bringing beloved characters to life. We curate, distribute, and craft figures for collectors who care about detail.',
 };
 
 export const navLinks = [
@@ -83,45 +83,6 @@ export const products = [
   },
 ];
 
-export const team = [
-  {
-    name: 'Marcus Chen',
-    role: 'CEO / Founder',
-    bio: 'Twenty years in toy design and a lifelong collector. Marcus founded Figureform to give fellow enthusiasts a source they could trust.',
-    image: 'https://images.pexels.com/photos/17049771/pexels-photo-17049771.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-  },
-  {
-    name: 'Sofia Rivera',
-    role: 'Creative Director',
-    bio: 'Former concept artist for major studios. Sofia leads visual identity and ensures every figure meets our quality bar.',
-    image: 'https://images.pexels.com/photos/38197025/pexels-photo-38197025.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-  },
-  {
-    name: 'David Okafor',
-    role: 'Product Manager',
-    bio: 'Coordinates releases, partnerships, and production schedules so the right figures arrive at the right time.',
-    image: 'https://images.pexels.com/photos/37605831/pexels-photo-37605831.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-  },
-  {
-    name: 'Hana Kim',
-    role: 'Marketing Lead',
-    bio: 'Builds the stories behind every drop and keeps the collector community in the loop across every channel.',
-    image: 'https://images.pexels.com/photos/31869537/pexels-photo-31869537.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-  },
-  {
-    name: 'Leo Martins',
-    role: 'Collector Community Manager',
-    bio: 'Runs our forums, events, and collector spotlights \u2014 the friendly face of Figureform online and at conventions.',
-    image: 'https://images.pexels.com/photos/10417388/pexels-photo-10417388.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-  },
-  {
-    name: 'Amara Bello',
-    role: 'Operations Manager',
-    bio: 'Keeps distribution, fulfillment, and logistics running smoothly across every region we ship to.',
-    image: 'https://images.pexels.com/photos/37148308/pexels-photo-37148308.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-  },
-];
-
 export const values = [
   {
     icon: 'Award',
@@ -141,12 +102,69 @@ export const values = [
   {
     icon: 'Users',
     title: 'Community',
-    description: 'Collectors are at the heart of Figureform. We build for and with our community.',
+    description: 'Collectors are at the heart of FigureHome. We build for and with our community.',
   },
   {
     icon: 'Flame',
     title: 'Passion',
     description: 'We are collectors first. That passion shows in every figure we curate and ship.',
+  },
+];
+
+export const testimonials = [
+  {
+    name: 'James Whitfield',
+    role: 'Collector, 8 years',
+    quote:
+      'Figureform is the only place I trust for grail pieces. Every figure arrives pristine, and their curation means I never second-guess a purchase.',
+    avatar:
+      'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&h=200&w=200',
+    rating: 5,
+  },
+  {
+    name: 'Priya Nair',
+    role: 'Display Artist',
+    quote:
+      'The custom commission service blew me away. They took my vague idea and delivered a one-of-a-kind piece that is now the centerpiece of my shelf.',
+    avatar:
+      'https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&cs=tinysrgb&h=200&w=200',
+    rating: 5,
+  },
+  {
+    name: 'Tom Becker',
+    role: 'Convention Regular',
+    quote:
+      'Their convention exclusives are always first to my door. Packaging is impeccable and the team genuinely cares about collectors.',
+    avatar:
+      'https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&h=200&w=200',
+    rating: 5,
+  },
+  {
+    name: 'Elena Rossi',
+    role: 'New Collector',
+    quote:
+      'I was overwhelmed starting out. The consultation call helped me pick a focus and avoid impulse buys. My collection has never looked better.',
+    avatar:
+      'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&h=200&w=200',
+    rating: 5,
+  },
+  {
+    name: 'Marcus Lee',
+    role: 'Sci-Fi Enthusiast',
+    quote:
+      'The Galaxy Trooper Elite exceeded every expectation. Paint apps are flawless and the weathering detail is on another level.',
+    avatar:
+      'https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg?auto=compress&cs=tinysrgb&h=200&w=200',
+    rating: 5,
+  },
+  {
+    name: 'Aisha Diallo',
+    role: 'Collector Community Member',
+    quote:
+      'The community Figureform has built is unmatched. Forums, events, spotlights — it feels like a club, not just a store.',
+    avatar:
+      'https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&h=200&w=200',
+    rating: 5,
   },
 ];
 
@@ -165,97 +183,4 @@ export const blogCategories = [
   'News',
   'Tips & Guides',
   'Company',
-];
-
-export const seedPosts = [
-  {
-    title: 'The Art of Articulation: What Makes a Great Action Figure',
-    slug: 'art-of-articulation-great-action-figure',
-    category: 'Action Figures',
-    excerpt:
-      'From ball joints to die-cast frames, we break down the engineering choices that separate a good figure from a truly great one.',
-    content:
-      '<p>Articulation is the skeleton of any great action figure. It is what transforms a static sculpture into something that can be posed, played with, and displayed in endless configurations.</p><h2>The Joint Spectrum</h2><p>Modern figures use a range of joint types \u2014 ball joints, hinge joints, swivel joints, and the increasingly popular double-jointed elbows and knees. Each has trade-offs between range of motion and visual cleanliness.</p><h2>Beyond the Joints</h2><p>But articulation alone does not make a figure great. The sculpt must accommodate the joints, the paint apps must hold up under posing, and the accessories must complement the range of motion available. A figure with 40 points of articulation is meaningless if none of them hold a pose.</p><p>The best figures balance engineering with artistry \u2014 and that balance is what we look for in every figure we curate.</p>',
-    featured_image:
-      'https://images.pexels.com/photos/8000986/pexels-photo-8000986.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-    author: 'Marcus Chen',
-    tags: ['articulation', 'engineering', 'design'],
-    status: 'published',
-    reading_time: 6,
-  },
-  {
-    title: 'Starting Your Collection: A Beginner\u2019s Guide',
-    slug: 'starting-your-collection-beginners-guide',
-    category: 'Tips & Guides',
-    excerpt:
-      'New to collecting? Here is how to build a collection you will love for years without breaking the bank.',
-    content:
-      '<p>Starting a collection can feel overwhelming. There are thousands of figures, dozens of scales, and an endless stream of new releases. But a great collection is not about having everything \u2014 it is about having the right things for you.</p><h2>Pick a Focus</h2><p>The most satisfying collections have a through-line. That could be a single franchise, a scale (like 1/12 or 1/6), a manufacturer, or even a theme like "dynamic posing." A focus narrows your decisions and gives your collection cohesion.</p><h2>Quality Over Quantity</h2><p>One figure you love will bring more joy than ten you bought on impulse. Take your time, read reviews, and buy pieces that genuinely excite you.</p><h2>Think About Display Early</h2><p>How and where you display your figures shapes the whole experience. Even a simple glass shelf can turn a collection into a centerpiece.</p>',
-    featured_image:
-      'https://images.pexels.com/photos/16034963/pexels-photo-16034963.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-    author: 'Hana Kim',
-    tags: ['beginners', 'collecting', 'guide'],
-    status: 'published',
-    reading_time: 5,
-  },
-  {
-    title: 'Review: The New Iron Sentinel Mk. III',
-    slug: 'review-iron-sentinel-mk-iii',
-    category: 'Reviews',
-    excerpt:
-      'Die-cast armor, 32 points of articulation, and a price tag to match. Is the latest Iron Sentinel worth it?',
-    content:
-      '<p>The Iron Sentinel Mk. III is one of the most anticipated releases of the year, and we have spent the last two weeks putting it through its paces.</p><h2>The Build</h2><p>Die-cast gives the figure a satisfying heft, and the armor panels lock together with a precision that makes posing feel sturdy rather than fiddly. The paint is clean, with subtle weathering on the edges that rewards close inspection.</p><h2>The Articulation</h2><p>32 points of articulation is a big number, but the engineering backs it up. The double-jointed elbows and knees achieve deep bends, and the ab crunch allows for dynamic stances without gap visibility from the front.</p><h2>Verdict</h2><p>At $189 it is an investment, but the quality is there. For collectors who value heft, finish, and presence on the shelf, the Mk. III delivers.</p>',
-    featured_image:
-      'https://images.pexels.com/photos/7258489/pexels-photo-7258489.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-    author: 'David Okafor',
-    tags: ['review', 'iron sentinel', 'superhero'],
-    status: 'published',
-    reading_time: 7,
-  },
-  {
-    title: 'Convention Season 2025: What to Expect',
-    slug: 'convention-season-2025-what-to-expect',
-    category: 'News',
-    excerpt:
-      'Exclusive drops, panel reveals, and limited editions \u2014 our preview of the biggest conventions of the year.',
-    content:
-      '<p>Convention season is the most exciting time on the collector calendar. This year promises to be bigger than ever, with major studios teasing their biggest reveals yet.</p><h2>Exclusive Drops</h2><p>Several manufacturers have confirmed convention-exclusive figures, including numbered variants and first-look prototypes that will not hit general retail until 2026.</p><h2>Panels and Reveals</h2><p>Expect sneak peeks at upcoming lines, Q&A sessions with sculptors, and the first public looks at several long-rumored releases.</p><p>We will be on the floor covering it all \u2014 follow along for live updates.</p>',
-    featured_image:
-      'https://images.pexels.com/photos/6342783/pexels-photo-6342783.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-    author: 'Leo Martins',
-    tags: ['conventions', 'news', 'exclusives'],
-    status: 'published',
-    reading_time: 4,
-  },
-  {
-    title: 'How We Curate: Inside the Figureform Selection Process',
-    slug: 'how-we-curate-figureform-selection-process',
-    category: 'Company',
-    excerpt:
-      'Ever wonder how a figure makes it into our store? Here is a look behind the curtain at our curation process.',
-    content:
-      '<p>Every figure in our store has been through a rigorous curation process. We do not list everything \u2014 we list what we believe in.</p><h2>Step One: Sourcing</h2><p>We work directly with manufacturers and verified distributors. Every figure is checked for authenticity before it is even considered for our shelves.</p><h2>Step Two: Hands-On Review</h2><p>Our team opens, poses, and photographs every figure. We look at paint apps, joint stability, accessory quality, and overall presence.</p><h2>Step Three: The Curation Meeting</h2><p>Each week, the team reviews candidates and decides what makes the cut. A figure needs a unanimous yes to be listed.</p><p>This process is why our catalog is curated rather than exhaustive \u2014 and we would not have it any other way.</p>',
-    featured_image:
-      'https://images.pexels.com/photos/6390193/pexels-photo-6390193.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-    author: 'Sofia Rivera',
-    tags: ['company', 'curation', 'behind the scenes'],
-    status: 'published',
-    reading_time: 5,
-  },
-  {
-    title: 'Display Ideas: Showcasing Your Collection Like a Pro',
-    slug: 'display-ideas-showcasing-your-collection',
-    category: 'Collecting',
-    excerpt:
-      'Lighting, spacing, and storytelling \u2014 the principles that turn a shelf of figures into a curated display.',
-    content:
-      '<p>A great display does more than hold figures \u2014 it tells a story. Here are the principles we use when advising collectors on display.</p><h2>Lighting is Everything</h2><p>Good lighting makes paint apps pop and gives figures a premium feel. LED strip lighting on shelves is an affordable upgrade that transforms a display.</p><h2>Create Vignettes</h2><p>Rather than lining figures up shoulder to shoulder, group them into small scenes. A hero facing off against a villain creates a moment that draws the eye.</p><h2>Leave Breathing Room</h2><p>Crowded shelves make even great figures look cluttered. Spacing lets each piece breathe and gives the whole display a gallery feel.</p>',
-    featured_image:
-      'https://images.pexels.com/photos/4061668/pexels-photo-4061668.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
-    author: 'Amara Bello',
-    tags: ['display', 'collecting', 'tips'],
-    status: 'published',
-    reading_time: 5,
-  },
 ];

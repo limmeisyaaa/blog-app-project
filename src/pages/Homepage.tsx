@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Quote, Star } from "lucide-react";
 import { ProductCard } from "@/components/cards/ProductCard";
 import { BlogCard } from "@/components/cards/BlogCard";
 import { ServiceCard } from "@/components/cards/ServiceCard";
 import { Link } from "react-router";
-import { company, products, services } from "@/data/side";
-import { CTASection } from "@/sections/CTASections";
+import { company, products, services, testimonials } from "@/data/side";
 import type { BlogPost } from "@/types/blog";
+import { SectionHeader } from "@/components/SectionHeader";
 
 const btnPrimary =
   "inline-flex items-center justify-center gap-2 rounded-full bg-electric px-8 py-4 text-base font-semibold text-white shadow-sm shadow-electric/30 transition-colors hover:bg-blue-700";
@@ -17,54 +17,8 @@ const btnDark =
 const btnGhost =
   "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-neutral-100";
 
-function SectionHeader({
-  eyebrow,
-  title,
-  description,
-  align = "left",
-  className = "",
-}: {
-  eyebrow?: string;
-  title: string;
-  description?: string;
-  align?: "left" | "center";
-  className?: string;
-}) {
-  return (
-    <div
-      className={`${align === "center" ? "text-center mx-auto max-w-2xl" : "max-w-2xl"} ${className}`}
-    >
-      {eyebrow && (
-        <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-electric">
-          {eyebrow}
-        </p>
-      )}
-      <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl text-balance">
-        {title}
-      </h2>
-      {description && (
-        <p className="mt-4 text-lg leading-relaxed text-neutral-600 text-balance">
-          {description}
-        </p>
-      )}
-    </div>
-  );
-}
-
 export function HomePage() {
   const [posts, setPosts] = useState<BlogPost[]>([]);
-
-  useEffect(() => {
-    // supabase
-    //   .from('blog_posts')
-    //   .select('*')
-    //   .eq('status', 'published')
-    //   .order('created_at', { ascending: false })
-    //   .limit(3)
-    //   .then(({ data }) => {
-    //     if (data && data.length > 0) setPosts(data as BlogPost[]);
-    //   });
-  }, []);
 
   return (
     <>
@@ -85,7 +39,7 @@ export function HomePage() {
                 {company.description}
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                <Link to="/blog" className={btnPrimary}>
+                <Link to="/catalouge" className={btnPrimary}>
                   Explore Our Collection
                   <ArrowRight className="h-5 w-5" />
                 </Link>
@@ -153,12 +107,13 @@ export function HomePage() {
               title="Figures Worth the Shelf Space"
               description="A hand-picked selection of our latest and most sought-after action figures."
             />
-            <Link to="/blog" className={`${btnGhost} shrink-0`}>
+            <Link to="/catalouge" className={`${btnGhost} shrink-0`}>
               View All <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
+          
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {products.map((p) => (
+            {products.slice(0, 4).map((p) => (
               <ProductCard key={p.name} {...p} />
             ))}
           </div>
@@ -184,9 +139,9 @@ export function HomePage() {
             </div>
             <div>
               <SectionHeader
-                eyebrow="About Figureform"
+                eyebrow="About FigureHome"
                 title="Built by Collectors, for Collectors"
-                description="We started Figureform because we could not find a source that treated action figures with the respect they deserve. Every figure we stock is one we would proudly display ourselves."
+                description="We started FigureHome because we could not find a source that treated action figures with the respect they deserve. Every figure we stock is one we would proudly display ourselves."
               />
               <div className="mt-8 grid grid-cols-2 gap-6">
                 <div className="border-l-2 border-electric pl-4">
@@ -249,7 +204,59 @@ export function HomePage() {
         </div>
       </section>
 
-      <CTASection />
+      {/* Testimonial Preview */}
+      <section className="bg-offwhite py-20 lg:py-28">
+        <div className="container-page">
+          <div className="mx-auto mb-14 max-w-2xl text-center">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-icon-exclamation-orange">
+              Collector Stories
+            </p>
+            <h2 className="text-3xl font-bold tracking-tight text-ink sm:text-4xl text-balance">
+              Trusted by Collectors Worldwide
+            </h2>
+            <p className="mt-4 text-lg leading-relaxed text-neutral-600 text-balance">
+              Real words from the people who know us best — the collectors who
+              display our figures every day.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {testimonials.map((t) => (
+              <figure
+                key={t.name}
+                className="group relative flex flex-col rounded-2xl border border-neutral-200 bg-white p-7 transition-all duration-300 hover:-translate-y-1 hover:border-electric/30 hover:shadow-xl hover:shadow-neutral-200/60"
+              >
+                <Quote
+                  className="absolute right-6 top-6 h-8 w-8 text-neutral-200 transition-colors group-hover:text-electric/20"
+                  aria-hidden
+                />
+
+                <div className="flex items-center gap-1 text-orange">
+                  {Array.from({ length: t.rating }).map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-current" />
+                  ))}
+                </div>
+
+                <blockquote className="mt-4 flex-1 text-base leading-relaxed text-neutral-700">
+                  &ldquo;{t.quote}&rdquo;
+                </blockquote>
+
+                <figcaption className="mt-6 flex items-center gap-3 border-t border-neutral-100 pt-5">
+                  <img
+                    src={t.avatar}
+                    alt={t.name}
+                    className="h-11 w-11 rounded-full object-cover ring-2 ring-neutral-100"
+                  />
+                  <div>
+                    <p className="text-sm font-bold text-ink">{t.name}</p>
+                    <p className="text-xs text-neutral-500">{t.role}</p>
+                  </div>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 }

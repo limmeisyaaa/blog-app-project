@@ -48,7 +48,7 @@ export function BlogCard({ post, featured = false }: { post: BlogPost; featured?
           </div>
           <Link
             to={`/blog/${post.slug}`}
-            className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-electric transition-colors hover:text-orange"
+            className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-electric transition-colors hover:text-icon-exclamation-orange"
           >
             Read Article
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -94,7 +94,7 @@ export function BlogCard({ post, featured = false }: { post: BlogPost; featured?
           </div>
           <Link
             to={`/blog/${post.slug}`}
-            className="inline-flex items-center gap-1 text-xs font-semibold text-electric transition-colors hover:text-orange"
+            className="inline-flex items-center gap-1 text-xs font-semibold text-electric transition-colors hover:text-icon-exclamation-orange"
           >
             Read More
             <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />

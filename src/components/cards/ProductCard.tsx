@@ -1,6 +1,7 @@
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router';
 
-interface ProductCardProps {
+export interface ProductCardProps {
   name: string;
   category: string;
   description: string;
@@ -29,13 +30,17 @@ export function ProductCard({ name, category, description, price, image }: Produ
         <h3 className="text-lg font-bold text-ink">{name}</h3>
         <p className="mt-2 flex-1 text-sm leading-relaxed text-neutral-600">{description}</p>
         <div className="mt-5 flex items-center justify-between">
-          <span className={`text-lg font-bold ${isComingSoon ? 'text-orange' : 'text-ink'}`}>
+          <span className={`text-lg font-bold ${isComingSoon ? 'text-icon-exclamation-orange' : 'text-electric'}`}>
             {price}
           </span>
-          <span className="inline-flex items-center gap-1 text-sm font-semibold text-electric transition-colors group-hover:text-orange">
-            View Details
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </span>
+          {/*Link Ditambahkan jika telah membuat detail product*/}
+          {/* <Link
+            to={`/blog/${slug}`}
+            className="inline-flex items-center gap-1 text-sm font-semibold text-electric transition-colors group-hover:text-icon-exclamation-orange"
+          >
+            Read More
+            <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+          </Link> */}
         </div>
       </div>
     </article>
