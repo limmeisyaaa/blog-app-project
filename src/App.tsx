@@ -1,6 +1,5 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { HomePage } from "./pages/HomePage";
 import { AboutPage } from "./pages/AboutPage";
 import { ServicesPage } from "./pages/ServicePage";
 import { TeamsPage } from "./pages/TeamsPage";
@@ -10,6 +9,7 @@ import { CreateBlogPage } from "./pages/CreateBlogPage";
 import { Route, Routes } from "react-router";
 import { CatalougePage } from "./pages/CatalougePage";
 import { ContactPage } from "./pages/ContactPage";
+import { HomePage } from "./pages/Homepage";
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
