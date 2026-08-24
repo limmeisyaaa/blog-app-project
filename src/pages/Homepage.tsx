@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { ArrowRight, Quote, Star } from "lucide-react";
 import { ProductCard } from "@/components/cards/ProductCard";
 import { BlogCard } from "@/components/cards/BlogCard";
@@ -18,7 +18,7 @@ const btnGhost =
   "inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-neutral-100";
 
 export function HomePage() {
-  const [posts, setPosts] = useState<BlogPost[]>([]);
+  const [posts] = useState<BlogPost[]>([]);
 
   return (
     <>

@@ -1,6 +1,3 @@
-import { ArrowRight } from 'lucide-react';
-import { Link } from 'react-router';
-
 export interface ProductCardProps {
   name: string;
   category: string;

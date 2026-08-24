@@ -39,7 +39,7 @@ export async function getBlogPosts(): Promise<BlogPost[]> {
 export async function getPostBySlug(slug: string): Promise<BlogPost> {
   try {
     const apiFetchAll = apiClient(`https://manlygrip-us.backendless.app/api/data/BlogPosts?where=slug='${slug}'`);
-    const response = await apiFetchAll.get<BlogPost>('');
+    const response = await apiFetchAll.get<BlogPost[]>('');
     if (response.data && response.data.length > 0) {
       const rawPost = response.data[0];
       
@@ -50,7 +50,6 @@ export async function getPostBySlug(slug: string): Promise<BlogPost> {
           .filter(Boolean); 
       }
       
-      // 3. Return the manipulated data
       return rawPost as BlogPost;
     }
     

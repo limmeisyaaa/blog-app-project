@@ -7,7 +7,7 @@ import { useAuth } from "@/stores/useAuth";
 export function LoginPage() {
   const { login } = useAuth();
   const navigate = useNavigate();
-  const [mode, setMode] = useState<"login" | "signup">("login");
+  const [mode] = useState<"login" | "signup">("login");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [remember, setRemember] = useState(true);
@@ -30,7 +30,8 @@ export function LoginPage() {
 
     try {
       let response;
-      if (mode === "signup") {//Just incase mau tambahkan fitur signup, kita bisa handle disini
+      if (mode === "signup") {
+        //Just incase mau tambahkan fitur signup, kita bisa handle disini
         const url = "https://manlygrip-us.backendless.app/api/users/register";
         response = await axios.post(url, {
           email: formData.email,
@@ -42,6 +43,8 @@ export function LoginPage() {
           login: formData.email,
           password: formData.password,
         });
+      } else {
+        throw new Error("Invalid authentication mode");
       }
 
       login({
@@ -50,7 +53,6 @@ export function LoginPage() {
         email: response.data.email,
         userToken: response.data["user-token"],
       });
-
     } catch (error) {
       setError("An unexpected error occurred. Please try again.");
       setLoading(false);
