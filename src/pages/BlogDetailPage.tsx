@@ -4,12 +4,8 @@ import { ArrowLeft } from 'lucide-react';
 import type { BlogPost } from '@/types/blog';
 import { getPostBySlug } from '@/data/blogPosts';
 import { marked } from 'marked';
-import { useAuth } from '@/stores/useAuth';
-
-const btnPrimary = 'inline-flex items-center justify-center gap-2 rounded-full bg-electric px-6 py-3 text-sm font-semibold text-white shadow-sm shadow-electric/30 transition-colors hover:bg-blue-700 disabled:opacity-50';
 
 export function BlogDetailPage() {
-  const { user } = useAuth();
   const { slug } = useParams<{ slug: string }>();
   const [post, setPost] = useState<BlogPost | null>(null);
   const [loading, setLoading] = useState(true);
@@ -60,17 +56,6 @@ export function BlogDetailPage() {
     ? new Date(post.created_at).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
     : '';
 
-      if (!user) {
-        return (
-          <div className="container-page py-20 text-center">
-            <h1 className="text-3xl font-bold text-ink">Login Required</h1>
-            <p className="mt-4 text-neutral-600">You need to be logged in to access to blog.</p>
-            <Link to="/login" className="mt-8 inline-block">
-              <button className={btnPrimary}>Go to Login</button>
-            </Link>
-          </div>
-        );
-      }
   return (
     <>
       <article>

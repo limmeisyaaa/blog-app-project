@@ -2,11 +2,8 @@ import { useEffect, useState } from 'react';
 import { BlogCard } from '@/components/cards/BlogCard';
 import type { BlogPost } from '@/types/blog';
 import { getBlogPosts } from '@/data/blogPosts';
-import { useAuth } from '@/stores/useAuth';
-import { Link } from 'react-router';
 
 const PAGE_SIZE = 6;
-const btnPrimary = 'inline-flex items-center justify-center gap-2 rounded-full bg-electric px-6 py-3 text-sm font-semibold text-white shadow-sm shadow-electric/30 transition-colors hover:bg-blue-700 disabled:opacity-50';
 
 function PageHeader({ eyebrow, title, description }: { eyebrow?: string; title: string; description?: string }) {
   return (
@@ -23,7 +20,6 @@ function PageHeader({ eyebrow, title, description }: { eyebrow?: string; title: 
 }
 
 export function BlogListPage() {
-  const { user } = useAuth();
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [loading, setLoading] = useState(true);
   const [activeCategory, setActiveCategory] = useState('All');
@@ -50,18 +46,6 @@ export function BlogListPage() {
   const visible = filtered.slice(0, visibleCount);
   const featured = filtered[0];
   const rest = filtered.slice(1, visibleCount);
-
-  if (!user) {
-    return (
-      <div className="container-page py-20 text-center">
-        <h1 className="text-3xl font-bold text-ink">Login Required</h1>
-        <p className="mt-4 text-neutral-600">You need to be logged in to access to blog.</p>
-        <Link to="/login" className="mt-8 inline-block">
-          <button className={btnPrimary}>Go to Login</button>
-        </Link>
-      </div>
-    );
-  }
 
   return (
     <>
