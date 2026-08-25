@@ -4,7 +4,6 @@ import type { BlogPost } from '@/types/blog';
 import { getBlogPosts } from '@/data/blogPosts';
 
 const PAGE_SIZE = 6;
-
 function PageHeader({ eyebrow, title, description }: { eyebrow?: string; title: string; description?: string }) {
   return (
     <section className="border-b border-neutral-200 bg-offwhite">

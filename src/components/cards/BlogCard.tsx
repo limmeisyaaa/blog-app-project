@@ -19,7 +19,7 @@ export function BlogCard({ post, featured = false }: { post: BlogPost; featured?
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
           <div className="absolute left-5 top-5">
-            <span className="inline-block rounded-full bg-orange/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-orange-dark">
+            <span className="inline-block rounded-full bg-black px-3 py-1 text-xs font-semibold uppercase tracking-wide text-offwhite">
               Featured
             </span>
           </div>
